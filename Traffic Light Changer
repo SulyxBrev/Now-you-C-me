@@ -1,0 +1,38 @@
+#include <iostream>
+#include <chrono>
+#include <thread>
+using namespace std;
+using namespace std::chrono_literals;
+
+int main() 
+{
+    enum TrafficLight { RED, YELLOW, GREEN };
+    TrafficLight light = RED; 
+
+    while (true)
+     {
+        // Display current color of the traffic light
+        switch (light) 
+        {
+            case RED:
+                cout << "Traffic Light: RED" << endl;
+                this_thread::sleep_for(5s); // Red light for 5 seconds
+                light = GREEN; // Change to green
+                break;
+
+            case YELLOW:
+                cout << "Traffic Light: YELLOW" << endl;
+                this_thread::sleep_for(2s); // Yellow light for 2 seconds
+                light = RED; // Change to red
+                break;
+
+            case GREEN:
+                cout << "Traffic Light: GREEN" << endl;
+                this_thread::sleep_for(5s); // Green light for 5 seconds
+                light = YELLOW; // Change to yellow
+                break;
+        }
+    }
+
+    return 0;
+}

@@ -1,0 +1,55 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+ {
+    string bookType;
+    int daysLate;
+    double fine = 0.0;
+
+    // Input book type and days late 
+    cout << "Enter the type of book (regular, children's, reference): ";
+    cin >> bookType;
+    cout << "Enter the number of days late: ";
+    cin >> daysLate;
+
+    // Calculate based on book type and days late
+    if (bookType == "regular") 
+    {
+        // Regular book fine calculation
+        if (daysLate <= 7) 
+        {
+            fine = daysLate * 0.50;
+        } else 
+        {
+            fine = 7 * 0.50 + (daysLate - 7) * 1.00;
+        }
+    } 
+    else if (bookType == "children's") 
+    {
+        // Children's book fine calculation
+        if (daysLate <= 5)
+        {
+            fine = daysLate * 0.25;
+        } else 
+        {
+            fine = 5 * 0.25 + (daysLate - 5) * 0.50;
+        }
+    }
+    else if (bookType == "reference") 
+    {
+        // Reference book fine calculation
+        fine = daysLate * 1.00;
+    } else 
+    {
+        // Invalid book type
+        cout << "Invalid book type entered." << endl;
+        return 1; // Exit program with error code
+    }
+
+    // Output the calculated fine
+    cout << "Fine for returning a " << bookType << " book " << daysLate << " days late is: $" << fine << endl;
+
+    return 0;
+}

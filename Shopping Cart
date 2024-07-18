@@ -1,0 +1,41 @@
+#include <iostream>
+#include <iomanip> 
+using namespace std;
+
+int main() 
+{
+    double purchaseAmount;
+    double discountRate = 0.0;
+    double totalCost;
+
+    // Input purchase amount from user
+    cout << "Enter the total purchase amount: $";
+    cin >> purchaseAmount;
+
+    // Calculate total cost after applying discount
+    if (purchaseAmount >= 1000.0) 
+    {
+        discountRate = 0.15; 
+    } 
+    else if (purchaseAmount >= 500.0) 
+    {
+        discountRate = 0.1; 
+    } 
+    else if (purchaseAmount >= 200.0)
+    {
+        discountRate = 0.05; 
+    } 
+    else 
+    {
+        discountRate = 0.0; 
+    }
+
+    // Calculate total cost after applying discount
+    totalCost = purchaseAmount * (1.0 - discountRate);
+
+    // Output the total cost with applied discount
+    cout << fixed << setprecision(2); // Set output to 2 decimal places
+    cout << "Total cost after applying discount: $" << totalCost << endl;
+
+    return 0;
+}

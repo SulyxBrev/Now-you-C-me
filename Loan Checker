@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+int main()
+{
+    int age, customerMonths; 
+    double balance; 
+    bool crbCheck;
+
+
+    // Prompt
+    cout << "Enter your age";
+    cin >> age;
+
+    cout << "Enter your bank balance";
+    cin >> balance;
+
+    cout << "Confirm your CRB status";
+    cin >> crbCheck;
+
+    cout << "Enter your months as a customer";
+    cin >> customerMonths;
+
+    // Loan Check{
+    
+    if (age >= 22 && balance > 50000 && crbCheck 
+        && customerMonths > 6)
+    {
+        cout << "You qualify for a loan";
+    }
+    
+    else 
+     { 
+        cout << "You do not qualify for a loan"
+     }
+
+     return 0;
+    }
+}
+
